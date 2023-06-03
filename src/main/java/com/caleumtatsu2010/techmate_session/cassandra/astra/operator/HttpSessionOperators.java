@@ -1,17 +1,17 @@
-package com.caleumtatsu2010.techmate_session.cassandra;
+package com.caleumtatsu2010.techmate_session.cassandra.astra.operator;
 
-import com.caleumtatsu2010.techmate_session.SessionInstance;
+import com.caleumtatsu2010.techmate_session.HttpSessionInstance;
 
 import javax.servlet.http.HttpSession;
 import java.util.List;
 
-public abstract class SessionOperators implements SessionInstance {
+public abstract class HttpSessionOperators implements HttpSessionInstance {
 	
-	protected HttpSession session;
+	protected HttpSession httpSession;
 	
 	@Override
 	public void initialize(HttpSession session) {
-		this.session = session;
+		this.httpSession = session;
 	}
 	
 	abstract protected void setSessionAttribute(String attributeName, Object o);
