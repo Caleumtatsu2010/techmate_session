@@ -1,4 +1,4 @@
-package com.caleumtatsu2010.techmate_session.cassandra.model;
+package com.caleumtatsu2010.techmate_session.cassandra.astra.model;
 
 import com.caleumtatsu2010.cassandra.models.account.CASAccount;
 import com.caleumtatsu2010.cassandra.models.cart.CASCart;
@@ -14,7 +14,7 @@ import java.util.List;
 @NoArgsConstructor
 @Getter
 @Setter
-public class CASSession {
+public class AstraSession {
 	private CASAccount casAccount;
 	private CASCart casCart;
 	private List<CASCartItem> casCartItemList;
