@@ -1,4 +1,4 @@
-package com.caleumtatsu2010.techmate_session.cassandra.astra.syncer;
+package com.caleumtatsu2010.techmate_session.cassandra.astra;
 
 import com.caleumtatsu2010.cassandra.connection.astra.AstraConnector;
 import com.caleumtatsu2010.cassandra.dao.account.CASAccountDao;
@@ -8,43 +8,39 @@ import com.caleumtatsu2010.cassandra.models.account.CASAccount;
 import com.caleumtatsu2010.cassandra.models.cart.CASCart;
 import com.caleumtatsu2010.cassandra.models.cart.item.CASCartItem;
 import com.caleumtatsu2010.techmate_session.cassandra.astra.model.AstraSession;
-import com.caleumtatsu2010.techmate_session.cassandra.astra.util.AstraCrudUlti;
-import com.caleumtatsu2010.techmate_session.http.sync.HttpSessionSyncronizer;
+import com.caleumtatsu2010.techmate_session.cassandra.astra.util.AstraCrud;
 
 import java.util.List;
 
-public abstract class AstraHttpSessionSyncronizer implements HttpSessionSyncronizer {
+public class AstraHttpSessionSyncronizerCrud {
 	
 	private AstraConnector astraConnector;
-	private AstraSession astraSession;
 	private String astraKeySpace;
 	
-	public void HttpSessionAstraSyncronizer(AstraConnector astraConnector, AstraSession casSession, String astraKeyspace) {
-		this.astraConnector = astraConnector;
-	}
 	
-	public void syncAstraHttpSession() {
-		
+	public void syncAstraCart(AstraSession astraSession) {
 		CASCartDao casCartDao = new CASCartDao(this.astraConnector, this.astraKeySpace);
 		CASCart casCart = astraSession.getCasCart();
-		AstraCrudUlti.syncAstraCrud(casCartDao, casCart, astraSession.getCasCart().getId());
-		
+		AstraCrud.syncAstraCrud(casCartDao, casCart, astraSession.getCasCart().getId());
+	}
+	
+	public void syncAstraAccount(AstraSession astraSession) {
 		CASAccountDao casAccountDao = new CASAccountDao(this.astraConnector, this.astraKeySpace);
 		CASAccount casAccount = astraSession.getCasAccount();
-		AstraCrudUlti.syncAstraCrud(casAccountDao, casAccount, astraSession.getCasAccount().getId());
-		
+		AstraCrud.syncAstraCrud(casAccountDao, casAccount, astraSession.getCasAccount().getId());
+	}
+	
+	public void syncAstraCartItem(AstraSession astraSession) {
 		CASCartItemDao casCartItemDao = new CASCartItemDao(this.astraConnector, this.astraKeySpace);
 		List<CASCartItem> casCartItemList = astraSession.getCasCartItemList();
 		for (int i = 0; i < casCartItemList.size(); i++) {
-			AstraCrudUlti.syncAstraCrud(casCartItemDao, casCartItemList.get(i), casCartItemList.get(i).getId());
+			AstraCrud.syncAstraCrud(casCartItemDao, casCartItemList.get(i), casCartItemList.get(i).getId());
 		}
 	}
 	
-	@Override
-	public void syncHttpSession(Object o) {
-		this.astraSession = (AstraSession) o;
-		syncAstraHttpSession();
+	public void syncHttpSessionToAstra(AstraSession astraSession) {
+		syncAstraAccount(astraSession);
+		syncAstraCart(astraSession);
+		syncAstraCartItem(astraSession);
 	}
-	
-	
 }

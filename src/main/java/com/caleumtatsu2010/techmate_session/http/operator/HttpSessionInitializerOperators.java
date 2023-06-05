@@ -15,17 +15,17 @@ public class HttpSessionInitializerOperators extends HttpSessionInitializer {
 	}
 	
 	@Override
-	protected void setSessionAttribute(String attributeName, Object castObject) {
+	public void setSessionAttribute(String attributeName, Object castObject) {
 		super.httpSession.setAttribute(StringValidator.NulltoBlank(attributeName), castObject);
 	}
 	
 	@Override
-	protected Object getSessionAttribute(String attributeName) {
+	public Object getSessionAttribute(String attributeName) {
 		return super.httpSession.getAttribute(StringValidator.NulltoBlank(attributeName));
 	}
 	
 	@Override
-	protected List<Object> getAllSessionAttributes() {
+	public List<Object> getAllSessionAttributes() {
 		List<Object> list = new ArrayList<>();
 		Enumeration keys = super.httpSession.getAttributeNames();
 		while (keys.hasMoreElements()){

@@ -15,22 +15,24 @@ import java.util.stream.Collectors;
 @NoArgsConstructor
 @Getter
 @Setter
-public class AstraHttpSessionOperators extends HttpSessionInitializerOperators {
+public class AstraHttpSessionOperators  {
+	
+	private HttpSessionInitializerOperators httpSessionInitializerOperators;
 	
 	public void getSessionData(HttpServletRequest request) {
-		super.initialize(request.getSession());
+		httpSessionInitializerOperators.initialize(request.getSession());
 	}
 	
 	public void setAstraSessionAttribute(String attributeName, AstraSession astraSession) {
-		super.setSessionAttribute(attributeName, astraSession);
+		httpSessionInitializerOperators.setSessionAttribute(attributeName, astraSession);
 	}
 	
 	public AstraSession getAstraSessionAttribute(String attributeName){
-		return (AstraSession) super.getSessionAttribute(attributeName);
+		return (AstraSession) httpSessionInitializerOperators.getSessionAttribute(attributeName);
 	}
 	
 	public List<AstraSession> getAllAstraSessionAttribute(String attributeName) {
-		List<Object> objectList = super.getAllSessionAttributes();
+		List<Object> objectList = httpSessionInitializerOperators.getAllSessionAttributes();
 		return objectList.stream().map(element -> (AstraSession) element).collect(Collectors.toList());
 	}
 	
