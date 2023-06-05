@@ -1,11 +1,11 @@
-package com.caleumtatsu2010.techmate_session.cassandra.astra.operator;
+package com.caleumtatsu2010.techmate_session.http.operator;
 
-import com.caleumtatsu2010.techmate_session.HttpSessionInstance;
+import com.caleumtatsu2010.techmate_session.http.HttpSessionInstance;
 
 import javax.servlet.http.HttpSession;
 import java.util.List;
 
-public abstract class HttpSessionOperators implements HttpSessionInstance {
+public abstract class HttpSessionInitializer implements HttpSessionInstance {
 	
 	protected HttpSession httpSession;
 	

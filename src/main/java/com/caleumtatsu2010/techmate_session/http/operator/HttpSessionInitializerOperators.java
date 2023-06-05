@@ -1,4 +1,4 @@
-package com.caleumtatsu2010.techmate_session.cassandra.astra.operator;
+package com.caleumtatsu2010.techmate_session.http.operator;
 
 import com.caleumtatsu2010.utility.common.StringValidator;
 
@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.Enumeration;
 import java.util.List;
 
-public class HttpSessionOperatorsInitializer extends HttpSessionOperators {
+public class HttpSessionInitializerOperators extends HttpSessionInitializer {
 	
 	@Override
 	public void initialize(HttpSession session) {

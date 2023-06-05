@@ -1,6 +1,7 @@
-package com.caleumtatsu2010.techmate_session.cassandra.astra.operator;
+package com.caleumtatsu2010.techmate_session.cassandra.astra;
 
 import com.caleumtatsu2010.techmate_session.cassandra.astra.model.AstraSession;
+import com.caleumtatsu2010.techmate_session.http.operator.HttpSessionInitializerOperators;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -14,7 +15,7 @@ import java.util.stream.Collectors;
 @NoArgsConstructor
 @Getter
 @Setter
-public class AstraHttpSessionOperators extends HttpSessionOperatorsInitializer{
+public class AstraHttpSessionOperators extends HttpSessionInitializerOperators {
 	
 	public void getSessionData(HttpServletRequest request) {
 		super.initialize(request.getSession());
