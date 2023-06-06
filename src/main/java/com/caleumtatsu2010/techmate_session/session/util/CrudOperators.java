@@ -1,17 +1,10 @@
-package com.caleumtatsu2010.techmate_session.cassandra.astra.util;
+package com.caleumtatsu2010.techmate_session.session.util;
 
 import com.caleumtatsu2010.utility.object.reflect.ObjectUtilityInvoker;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
 
-@AllArgsConstructor
-@NoArgsConstructor
-@Getter
-@Setter
-public class AstraCrud {
-	public static void syncAstraCrud(Object objectDao, Object param, Object uuid) {
+public class CrudOperators {
+	
+	public static void CrudOperatorsForAstraDb(Object objectDao, Object param, Object uuid) {
 		Object methodReturn = ObjectUtilityInvoker.invokeGetMethod(objectDao, "get", uuid);
 		if (methodReturn != null) {
 			ObjectUtilityInvoker.invokeSetMethod(objectDao, "update", param, uuid);
