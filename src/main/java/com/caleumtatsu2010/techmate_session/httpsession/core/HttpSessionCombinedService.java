@@ -1,11 +1,8 @@
-package com.caleumtatsu2010.techmate_session.session.http.core;
+package com.caleumtatsu2010.techmate_session.httpsession.core;
 
-import com.caleumtatsu2010.techmate_session.session.http.config.HttpSessionSelfConfigurator;
-import com.caleumtatsu2010.techmate_session.session.http.config.SessionConfigPath;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
+import com.caleumtatsu2010.techmate_session.httpsession.config.HttpSessionSelfConfigurator;
+import com.caleumtatsu2010.techmate_session.httpsession.config.SessionConfigPath;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
 
 import javax.servlet.http.HttpSession;
 

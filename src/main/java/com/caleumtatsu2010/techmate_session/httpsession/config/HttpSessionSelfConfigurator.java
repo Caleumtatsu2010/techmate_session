@@ -1,4 +1,4 @@
-package com.caleumtatsu2010.techmate_session.session.http.config;
+package com.caleumtatsu2010.techmate_session.httpsession.config;
 
 import com.caleumtatsu2010.utility.common.StringValidator;
 import com.caleumtatsu2010.utility.file.properties.PropsUtil;

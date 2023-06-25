@@ -1,6 +1,6 @@
-package com.caleumtatsu2010.techmate_session.session.http.core;
+package com.caleumtatsu2010.techmate_session.httpsession.core;
 
-import com.caleumtatsu2010.techmate_session.session.http.HttpSessionInstance;
+import com.caleumtatsu2010.techmate_session.httpsession.HttpSessionInstance;
 
 import java.util.List;
 
@@ -12,7 +12,7 @@ public interface HttpSessionInitializer extends HttpSessionInstance {
 	
 	public List<Object> getAllSessionAttributes();
 	
-	public void removeSession(String attributeName);
+	public void removeSessionAttribute(String attributeName);
 	
 	public void sessionInvalidate();
 	

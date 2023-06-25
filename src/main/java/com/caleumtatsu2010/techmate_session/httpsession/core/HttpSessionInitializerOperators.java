@@ -1,6 +1,6 @@
-package com.caleumtatsu2010.techmate_session.session.http.core;
+package com.caleumtatsu2010.techmate_session.httpsession.core;
 
-import com.caleumtatsu2010.techmate_session.session.http.config.HttpSessionSelfConfigurator;
+import com.caleumtatsu2010.techmate_session.httpsession.config.HttpSessionSelfConfigurator;
 import com.caleumtatsu2010.utility.common.StringValidator;
 
 import javax.servlet.http.HttpSession;
@@ -32,8 +32,8 @@ public class HttpSessionInitializerOperators implements HttpSessionInitializer {
 	}
 	
 	@Override
-	public void removeSession(String attributeName) {
-		httpSession.removeAttribute(StringValidator.NulltoBlank(attributeName));
+	public void removeSessionAttribute(String attributeName) {
+		this.httpSession.removeAttribute(StringValidator.NulltoBlank(attributeName));
 	}
 	
 	@Override

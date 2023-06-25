@@ -1,4 +1,4 @@
-package com.caleumtatsu2010.techmate_session.session.util;
+package com.caleumtatsu2010.techmate_session.httpsession.util;
 
 import com.caleumtatsu2010.utility.object.pojo.reflect.ObjectUtilityInvoker;
 

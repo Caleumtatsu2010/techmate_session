@@ -1,4 +1,4 @@
-package com.caleumtatsu2010.techmate_session.session.http.config;
+package com.caleumtatsu2010.techmate_session.httpsession.config;
 
 public class SessionConfigPath {
 	private static String dir = "C:\\stuff\\Projects\\techmate_parent";
